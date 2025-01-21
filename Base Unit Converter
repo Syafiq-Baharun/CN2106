@@ -1,0 +1,11 @@
+import pint
+from misura.quantities import quantity
+
+ureg = pint.UnitRegistry(system='mks')
+ureg.default_system
+'mks'
+
+user_input = input("Please input a numerical number + units")
+quantity = ureg(user_input)
+base_units = quantity.to_base_units()
+print("The number's base units are:", base_units)
